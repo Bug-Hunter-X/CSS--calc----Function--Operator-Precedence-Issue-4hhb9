@@ -1,0 +1,9 @@
+The solution is to use parentheses to force the correct order of operations:
+
+```css
+.container {
+  width: calc((50% - 10px));
+}
+```
+
+This version ensures that 10px is subtracted from 50% of the *available* width *before* the percentage is calculated.  The use of parentheses makes the calculation unambiguous and guarantees the expected outcome.
