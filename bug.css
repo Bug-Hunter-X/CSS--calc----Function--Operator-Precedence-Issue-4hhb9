@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an issue related to the usage of the `calc()` function with percentages and incorrect operator precedence:
+
+```css
+.container {
+  width: calc(50% - 10px);
+}
+```
+
+The problem is that the calculation might not produce the expected result if the `- 10px` part needs to be calculated before the percentage.  In this case, the browser might first calculate 50% of the parent container and then subtract 10px from that result. However, if you intended to subtract 10px from 50% of the *available* width before calculating the percentage, the result would be different and inaccurate.
+
+This demonstrates the importance of operator precedence and the need for parentheses to explicitly define the order of operations within the `calc()` function.
